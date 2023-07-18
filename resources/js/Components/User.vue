@@ -1,7 +1,7 @@
 <template>
     <Link :href="'/users/' + user.id">
         <div class="user-card">
-            <h2>{{ user.name }}</h2>
+            <h2>{{ user.id }} - {{ user.name }}</h2>
             <h3>{{ user.email }}</h3>
         </div>
     </Link>

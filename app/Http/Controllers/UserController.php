@@ -19,9 +19,11 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+        return Inertia::render('Show', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -29,7 +31,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]));
+        return redirect()->to('/');
     }
 
     /**
@@ -61,8 +68,9 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->to('/');
     }
 }
