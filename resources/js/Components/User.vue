@@ -1,4 +1,6 @@
+<!-- User Component - displays a card for each user -->
 <template>
+    <!-- This link shows a details page for each user -->
     <Link :href="'/users/' + user.id">
         <div class="user-card">
             <h2>{{ user.id }} - {{ user.name }}</h2>

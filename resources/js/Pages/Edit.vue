@@ -20,12 +20,14 @@
         'user'
     ]);
 
+    // Prefill the form with the user's previous values
     const updateForm = useForm({
         name: props.user.name,
         email: props.user.email,
         password: '',
     });
 
+    // Send a patch request to users/userID to update values
     const updateUser = () => {
         updateForm.patch("/users/" + props.user.id);
     };

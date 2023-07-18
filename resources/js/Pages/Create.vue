@@ -15,12 +15,14 @@
     import { useForm } from '@inertiajs/vue3';
     import Layout from '../Layout.vue';
 
+    // Define the initial values of the form
     const userForm = useForm({
         name: '',
         email: '',
         password: ''
     });
 
+    // Send a post request with the form data to /users
     const createUser = () => {
         userForm.post('/users');
     };

@@ -10,6 +10,7 @@
     @inertiaHead
 </head>
 <body>
+    {{-- This file is injected with Inertia files --}}
     @inertia
 </body>
 </html>

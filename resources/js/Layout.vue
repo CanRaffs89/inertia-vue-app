@@ -1,3 +1,4 @@
+<!-- Layout Page - this wraps other pages -->
 <template>
     <div class="container">
         <h1>User List</h1>

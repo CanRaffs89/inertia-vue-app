@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
+// This handles all routes in one line of code :)
 Route::apiResource('users', UserController::class)->except(['index']);
