@@ -8,7 +8,8 @@ html {
     margin: 20px;
 }
 
-.user-card {
+.user-card,
+.button {
     border: 1px solid #fff;
     border-radius: 20px;
     padding: 20px
@@ -22,4 +23,9 @@ a {
 
 a:hover {
     color: darkcyan;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px 0;
 }

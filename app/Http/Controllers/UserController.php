@@ -19,11 +19,9 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(User $user)
+    public function create()
     {
-        return Inertia::render('Show', [
-            'user' => $user
-        ]);
+        return Inertia::render('Create');
     }
 
     /**
@@ -52,17 +50,25 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return Inertia::render('Edit', [
+            'user' => $user
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $newData = $request->validate([
+            'name' => 'required',
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+        $user->update(($newData));
+        return redirect()->to('/');
     }
 
     /**
