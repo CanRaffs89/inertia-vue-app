@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 // This handles all routes in one line of code :)
-Route::apiResource('users', UserController::class)->except(['index']);
+Route::resource('users', UserController::class)->except(['index']);
